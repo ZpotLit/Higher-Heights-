@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Higher Heights Schools</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+    a { text-decoration: none; }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #004080;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .logo { font-weight: bold; font-size: 1.5rem; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li a { color: white; font-weight: 500; }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background-color: #e6f0ff;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .btn {
+      background-color: #004080;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover { background-color: #00264d; }
+
+    /* Sections */
+    section { padding: 60px 20px; text-align: center; }
+    section h2 { font-size: 2rem; margin-bottom: 20px; color: #004080; }
+    section p { font-size: 1.1rem; max-width: 800px; margin: auto; }
+
+    /* Core Values list */
+    ul { list-style-type: disc; padding-left: 20px; }
+
+    /* Gallery */
+    .gallery { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+    .gallery img { width: 250px; height: 180px; object-fit: cover; border-radius: 5px; }
+
+    /* Forms */
+    form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+    input, textarea { padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100%; }
+    button { background-color: #004080; color: white; padding: 12px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+    button:hover { background-color: #00264d; }
+
+    /* Student Portal Form Specific */
+    #student-portal form button {
+      background-color: #0066cc;
+    }
+    #student-portal form button:hover {
+      background-color: #004080;
+    }
+
+    #dashboard { text-align:left; max-width:600px; margin:20px auto; }
+
+    /* Footer */
+    footer { background-color: #00264d; color: white; text-align: center; padding: 20px; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">Higher Heights Schools</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#core-values">Core Values</a></li>
+        <li><a href="#admissions">Admissions</a></li>
+        <li><a href="#student-portal">Student Portal</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Higher Heights Schools</h1>
+    <p>Nursery, Primary, Secondary & College — Government Approved</p>
+    <a href="#admissions" class="btn">Enroll Now</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Higher Heights Schools is committed to providing excellent education across all levels — Nursery, Primary, Secondary, and College. We nurture young minds, promote academic excellence, and encourage personal growth in a safe and structured environment.</p>
+  </section>
+
+  <!-- Vision Section -->
+  <section id="vision">
+    <h2>Our Vision</h2>
+    <p>To be a leading educational institution that nurtures excellence, creativity, and integrity, preparing students to thrive academically, socially, and personally in a rapidly changing world.</p>
+  </section>
+
+  <!-- Core Values Section -->
+  <section id="core-values">
+    <h2>Our Core Values</h2>
+    <p>At Higher Heights Schools, we are guided by principles that shape our community and learning environment:</p>
+    <ul style="max-width:500px; margin:auto; text-align:left; margin-top:15px;">
+      <li><strong>Excellence:</strong> Striving for the highest standards in academics and character.</li>
+      <li><strong>Integrity:</strong> Acting with honesty, fairness, and transparency in all we do.</li>
+      <li><strong>Respect:</strong> Valuing diversity, individuality, and mutual understanding.</li>
+      <li><strong>Innovation:</strong> Encouraging creativity, critical thinking, and problem-solving skills.</li>
+      <li><strong>Responsibility:</strong> Promoting accountability, self-discipline, and community engagement.</li>
+    </ul>
+  </section>
+
+  <!-- Admissions Section -->
+  <section id="admissions">
+    <h2>Admissions</h2>
+    <p>Enroll your child easily through our online registration form. Join the Higher Heights Schools family and secure a bright future for your child.</p>
+    <form onsubmit="alert('Form submitted!'); return false;">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="Child's Class (Nursery/Primary/Secondary/College)" required>
+      <textarea placeholder="Additional Information" rows="4"></textarea>
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+
+  <!-- Student Portal Section -->
+  <section id="student-portal">
+    <h2>Student Portal</h2>
+    <p>Access your classes, grades, attendance, and school resources.</p>
+
+    <!-- Login Form -->
+    <div id="login-form">
+      <form onsubmit="loginStudent(event)">
+        <input type="text" id="student-id" placeholder="Student ID or Email">
+        <input type="password" id="student-pass" placeholder="Password">
+        <button type="submit">Login</button>
+      </form>
+      <p style="margin-top:15px;">Forgot password? Contact the school administration.</p>
+    </div>
+
+    <!-- Dashboard always visible -->
+    <div id="dashboard" style="text-align:left; max-width:600px; margin:20px auto;">
+      <h3 id="welcome-msg">Welcome! (Enter your student ID to personalize)</h3>
+      <h4>Grades</h4>
+      <ul id="grades-list">
+        <li>Math: A</li>
+        <li>English: B+</li>
+        <li>Science: A-</li>
+      </ul>
+
+      <h4>Attendance</h4>
+      <p id="attendance-info">92%</p>
+
+      <h4>Class Schedule</h4>
+      <ul id="schedule-list">
+        <li>Math - 8:00AM</li>
+        <li>English - 10:00AM</li>
+        <li>Science - 1:00PM</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/250x180?text=School+1" alt="School Image 1">
+      <img src="https://via.placeholder.com/250x180?text=School+2" alt="School Image 2">
+      <img src="https://via.placeholder.com/250x180?text=School+3" alt="School Image 3">
+      <img src="https://via.placeholder.com/250x180?text=School+4" alt="School Image 4">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Reach out for inquiries, feedback, or more information about Higher Heights Schools.</p>
+    <form onsubmit="alert('Message sent!'); return false;">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Higher Heights Schools. All rights reserved.</p>
+  </footer>
+
+  <!-- Student Portal JS -->
+  <script>
+    const studentData = {
+      "student@example.com": {
+        name: "John Doe",
+        grades: { Math: "A", English: "B+", Science: "A-" },
+        attendance: "92%",
+        schedule: ["Math - 8:00AM", "English - 10:00AM", "Science - 1:00PM"]
+      },
+      "jane@example.com": {
+        name: "Jane Smith",
+        grades: { Math: "B", English: "A", Science: "B+" },
+        attendance: "95%",
+        schedule: ["Math - 9:00AM", "English - 11:00AM", "Science - 2:00PM"]
+      }
+    };
+
+    function loginStudent(e) {
+      e.preventDefault();
+      const id = document.getElementById('student-id').value;
+      const student = studentData[id];
+      if(student){
+        document.getElementById('welcome-msg').innerText = `Welcome, ${student.name}!`;
+        // Update grades
+        const gradesList = document.getElementById('grades-list');
+        gradesList.innerHTML = '';
+        for(let subject in student.grades){
+          const li = document.createElement('li');
+          li.textContent = `${subject}: ${student.grades[subject]}`;
+          gradesList.appendChild(li);
+        }
+        // Update attendance
+        document.getElementById('attendance-info').innerText = student.attendance;
+        // Update schedule
+        const scheduleList = document.getElementById('schedule-list');
+        scheduleList.innerHTML = '';
+        student.schedule.forEach(item=>{
+          const li = document.createElement('li');
+          li.textContent = item;
+          scheduleList.appendChild(li);
+        });
+      } else {
+        alert('Student not found. Try: student@example.com or jane@example.com');
+      }
+    }
+  </script>
+</body>
+</html>
